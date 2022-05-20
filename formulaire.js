@@ -14,11 +14,16 @@ calorieInput.addEventListener("change", (e) => {
   calorieInputValue = Number(e.target.value);
 });
 
+let totalCalorieStorage = parseInt(localStorage.getItem("kcal"));
 let totalKcal = 0;
+total.innerHTML = totalCalorieStorage;
+
+console.log(totalCalorieStorage);
 
 formulaire.addEventListener("submit", (e) => {
-  totalKcal += calorieInputValue;
   e.preventDefault();
+  calorieInputValue += totalCalorieStorage;
+  totalKcal += calorieInputValue;
   tableau.innerHTML += `
   <li class="article-card">
   <h1>${nameInputValue}</h1>
@@ -29,15 +34,13 @@ formulaire.addEventListener("submit", (e) => {
   nameInputValue = "";
   nameInput.value = "";
   calorieInputValue = "";
+  ``;
   calorieInput.value = "";
   total.innerHTML = `${totalKcal}`;
 
   localStorage.setItem("tableau", JSON.stringify(tableau.innerHTML));
   localStorage.setItem("kcal", JSON.stringify(totalKcal));
 });
-
-let nb = parseInt(localStorage.getItem("kcal"));
-if (nb != Number) total.innerHTML = nb;
 
 let obj = JSON.parse(localStorage.getItem("tableau"));
 tableau.innerHTML = obj;

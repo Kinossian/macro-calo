@@ -1,0 +1,231 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  user-select: none;
+}
+body {
+  /* background: rgb(99, 121, 151); */
+  background: #01689f;
+  color: white;
+}
+#title-index {
+  font-size: 4rem;
+}
+nav {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 5px auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+/* nav::before {
+  content: "";
+  height: 14px;
+  background: rgb(242, 242, 242);
+  width: 100%;
+  position: absolute;
+  top: -1rem;
+  margin: 0;
+} */
+nav a {
+  text-decoration: none;
+  font-size: 1rem;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 0.6rem;
+  background: rgb(242, 242, 242);
+  color: rgb(73, 119, 142);
+  margin: 0 1px;
+  width: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 1px 10px rgb(59, 73, 90);
+}
+nav a:hover {
+  text-decoration: underline;
+  background: rgb(242, 242, 242);
+  color: rgb(87, 111, 123);
+}
+nav h1 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  text-shadow: 0 2px 10px rgba(26, 26, 26, 0.718);
+  border: 1px dotted rgba(0, 0, 0, 0.218);
+  border-radius: 5px;
+  padding: 1rem;
+}
+.title {
+  font-size: 3rem;
+  text-align: center;
+  margin: 5rem 1rem;
+  position: relative;
+  padding: 1rem;
+  text-shadow: 0 1px 20px rgba(36, 35, 35, 0.571);
+  text-transform: capitalize;
+}
+.title::after {
+  content: "";
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(217, 218, 217, 0.289);
+}
+#totalCard {
+  max-width: 400px;
+  margin: 0 auto;
+}
+#totalCard h1 {
+  margin: 1rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  color: #d3d7e1;
+  text-align: center;
+}
+#totalCard em {
+  text-transform: capitalize;
+}
+#alimentsCardContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+#totalKcal {
+  color: white;
+  text-decoration: underline;
+  border: 1px white solid;
+  padding: 5px;
+}
+.aliment-card {
+  text-transform: capitalize;
+  font-size: 0.5rem;
+  width: 340px;
+  margin: 1rem auto;
+  padding: 1rem;
+  border: 2px dotted rgb(229, 229, 229);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(61, 99, 151);
+  opacity: 0.4;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  transition: all 100ms ease-in-out;
+}
+.aliment-card h1,
+.aliment-card h2 {
+  font-weight: 100;
+  font-size: 0.8rem;
+}
+#gr {
+  font-size: 10px;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+}
+
+.plus,
+.moins {
+  font-size: 1rem;
+  border: 1px solid rgb(227, 227, 227);
+  border-radius: 300px;
+  padding: 10px;
+  position: absolute;
+  background: rgb(30, 57, 97);
+  display: none;
+}
+.plus {
+  right: 1rem;
+}
+.moins {
+  left: 1rem;
+}
+.selected {
+  opacity: 1;
+  border: 2px solid rgb(229, 229, 229);
+}
+
+#formulaire {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  /* min-height: 200px; */
+  margin: 5rem auto 0;
+}
+#formulaire :nth-child(1),
+#formulaire :nth-child(2),
+#formulaire :nth-child(3) {
+  height: 1.3rem;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  margin: 2px auto;
+}
+#formulaire :nth-child(1) {
+  width: 300px;
+}
+#formulaire :nth-child(2) {
+  width: 300px;
+}
+#formulaire :nth-child(3) {
+  width: 150px;
+  height: 2rem;
+  border-radius: 150px;
+  cursor: pointer;
+  background: rgb(156, 179, 212);
+  color: rgb(0, 0, 0);
+  font-weight: 900;
+  line-height: 0;
+  margin-top: 0.8rem;
+}
+#formulaire :nth-child(3):hover {
+  color: rgb(230, 230, 230);
+  background: rgb(30, 57, 97);
+}
+
+#total-container {
+  margin: 1rem;
+  text-align: center;
+  font-size: 2rem;
+}
+#tableau {
+  display: flex;
+  flex-wrap: wrap;
+}
+.article-card {
+  width: 300px;
+  margin: 1rem auto 0;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  border: 1px dotted rgb(196, 193, 193);
+  border-radius: 1rem;
+}
+.article-card h1 {
+  font-size: 1.7rem;
+  font-weight: 100;
+}
+.fas {
+  cursor: pointer;
+  font-size: 3rem;
+  border: 1px solid white;
+  border-radius: 150px;
+  padding: 1rem;
+  background: rgb(56, 61, 93);
+  display: flex;
+  width: 3rem;
+  justify-content: center;
+  margin: 1rem auto;
+}

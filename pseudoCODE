@@ -1,0 +1,16 @@
+--------------------------------
+CALCULER DES ELEMENT SELECTIONER
+--------------------------------
+j'affiche mon tableau sur le dom avec un map,
+J'ajoute un id et une class a mes li
+je crée une constante de ma liste de li en recupérant la class,
+pour chaque li de ma list,
+je crée un evenement au click,
+j'ajoute une class selected en toggle,
+je crée un receveur pour mon age total,
+pour chaque li de ma list,
+si mon li contient la class selected, 
+alors pour chaque objet de mon tableau,
+si l'id de mon objet est egal a l'id de mon li,
+j'additionne les ages,
+j'affiche le total dans mon DOM

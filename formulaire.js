@@ -22,8 +22,9 @@ console.log(totalCalorieStorage);
 
 formulaire.addEventListener("submit", (e) => {
   e.preventDefault();
-  calorieInputValue += totalCalorieStorage;
+  if (totalCalorieStorage > 0) calorieInputValue += totalCalorieStorage;
   totalKcal += calorieInputValue;
+
   tableau.innerHTML += `
   <li class="article-card">
   <h1>${nameInputValue}</h1>
@@ -34,7 +35,6 @@ formulaire.addEventListener("submit", (e) => {
   nameInputValue = "";
   nameInput.value = "";
   calorieInputValue = "";
-  ``;
   calorieInput.value = "";
   total.innerHTML = `${totalKcal}`;
 
